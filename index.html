@@ -5,12 +5,12 @@
         
         <div id="bamBoxContainer">
             
+            <div class="bamBox">1<br><br><br><br><br><br><br></div>
             <div class="bamBox">1</div>
             <div class="bamBox">1</div>
             <div class="bamBox">1</div>
             <div class="bamBox">1</div>
-            <div class="bamBox">1</div>
-            <div class="bamBox">1</div>
+            <div class="bamBox">1<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
             <div class="bamBox">1</div>
             <div class="bamBox">1</div>
 
@@ -97,6 +97,44 @@
                     $(".bamBox:nth-child(8)").addClass('no-margin');
                 }
             });
+
+
+
+            $(document).ready(function(){
+                    //Invoke Equal Height Function
+                    equalHeight($(".half"));
+                    equalHeight($(".third"));	
+
+                        
+                    //Window Resize Function
+                        $(window).resize(function() {
+                            //Equal Height 
+                            equalHeight($(".half"));
+                            equalHeight($(".third"));		
+                        });
+
+                });
+            // END DOCUMENT READY FUNCTION //////////////////////////////
+            /////////////////////////////////////////////////////////////	
+                
+            //Equal Height Function
+            function equalHeight(group) {
+            group.css("height","auto");
+            tallest = 0;
+                
+                if ($(document).width() > 0) {
+                    group.each(function() {
+                            thisHeight = $(this).height();
+                            if(thisHeight > tallest) {
+                                tallest = thisHeight;
+                            }
+                    });
+                } else {
+                    tallest = "auto"; 
+                }
+            group.height(tallest);
+            }
+
 
         </script>
         
