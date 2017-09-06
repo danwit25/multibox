@@ -1,0 +1,102 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+        
+        <div id="bamBoxContainer">
+            
+            <div class="bamBox">1</div>
+            <div class="bamBox">1</div>
+            <div class="bamBox">1</div>
+            <div class="bamBox">1</div>
+            <div class="bamBox">1</div>
+            <div class="bamBox">1</div>
+            <div class="bamBox">1</div>
+            <div class="bamBox">1</div>
+
+        </div>
+
+
+
+
+        <style>
+
+            #bamBoxContainer{
+                width: 100%;
+            }
+        
+            .bamBox{
+                box-sizing: border-box;
+                background-color: #fff; 
+                border:solid 1px #cbcbcb; 
+                float: left; 
+                text-align: center; 
+                border-radius:25px; 
+                margin-bottom: 1em;
+                padding: 1em;
+                margin-right: 2%;
+                }
+
+            .full{width: 100%;}
+            .half{width: 49%;}
+            .third{width: 32%;}
+
+            .no-margin{margin-right: 0;}
+
+            @media screen and (max-width:639px){
+
+                .bamBox{width: 100%; margin-right: 0;}
+
+            }
+        
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                //Count children boxes
+                var children = $('.bamBox').length
+
+                if(children == 1){
+                    $(".bamBox:nth-child(1)").addClass('full');
+                    $(".bamBox:nth-child(1)").addClass('no-margin');
+                }
+
+                if(children == 2){
+                    $(".bamBox:nth-child(1)").addClass('half');
+                    $(".bamBox:nth-child(2)").addClass('half');
+                    $(".bamBox:nth-child(2)").addClass('no-margin');
+                }
+
+                if(children == 3){
+                    $(".bamBox:nth-child(1)").addClass('half');
+                    $(".bamBox:nth-child(2)").addClass('half');
+                    $(".bamBox:nth-child(2)").addClass('no-margin');
+                    $(".bamBox:nth-child(3)").addClass('half');
+                }
+
+                if(children == 4){
+                    $(".bamBox:nth-child(1)").addClass('half');
+                    $(".bamBox:nth-child(2)").addClass('half');
+                    $(".bamBox:nth-child(2)").addClass('no-margin');
+                    $(".bamBox:nth-child(3)").addClass('half');
+                    $(".bamBox:nth-child(4)").addClass('half');
+                    $(".bamBox:nth-child(4)").addClass('no-margin');
+                }
+
+                if(children >= 5){
+                    $(".bamBox:nth-child(1)").addClass('half');
+                    $(".bamBox:nth-child(2)").addClass('half');
+                    $(".bamBox:nth-child(2)").addClass('no-margin');
+                    $(".bamBox:nth-child(3)").addClass('third');
+                    $(".bamBox:nth-child(4)").addClass('third');
+                    $(".bamBox:nth-child(5)").addClass('third');
+                    $(".bamBox:nth-child(5)").addClass('no-margin');
+                    $(".bamBox:nth-child(6)").addClass('third');
+                    $(".bamBox:nth-child(7)").addClass('third');
+                    $(".bamBox:nth-child(8)").addClass('third');
+                    $(".bamBox:nth-child(8)").addClass('no-margin');
+                }
+            });
+
+        </script>
+        
